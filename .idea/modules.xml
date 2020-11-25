@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaHook.iml" filepath="$PROJECT_DIR$/JavaHook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JVMDumper.iml" filepath="$PROJECT_DIR$/JVMDumper.iml" />
     </modules>
   </component>
 </project>
