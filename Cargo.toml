@@ -1,0 +1,18 @@
+[package]
+name = "JavaHook"
+version = "0.1.0"
+authors = ["Slimig <slimecheat@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+winapi = "0.3.9"
+wio = "0.2.2"
+jni = "0.18.0"
+detour = "0.7.1"
+zip = "0.5"
+walkdir = "2.3.1"
+
+[lib]
+name = "javahook"
+# defines a DLL to be exported. a "cdylib" would also work just fine, and is in some cases necessary, but wouldn't necessarily allow you to use all the features in the stdlib
+crate-type = ["dylib"]
