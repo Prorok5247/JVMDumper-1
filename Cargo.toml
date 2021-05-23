@@ -5,10 +5,10 @@ authors = ["Slimig <slimig@protonmail.com>"]
 edition = "2018"
 
 [dependencies]
-winapi = "0.3.9"
+winapi = { version = "0.3.6", features = ["libloaderapi"] }
 wio = "0.2.2"
 jni = "0.18.0"
-detour = "0.7.1"
+detour = "0.8.0"
 zip = "0.5"
 walkdir = "2.3.1"
 
