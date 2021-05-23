@@ -13,12 +13,11 @@ use jni::sys::{jbyteArray, jclass, jint, JNIEnv, jobject, jstring};
 use walkdir::{DirEntry, WalkDir};
 use winapi::_core::mem;
 use winapi::shared::minwindef::{DWORD, HINSTANCE, LPVOID};
-use winapi::um::libloaderapi;
-use winapi::um::libloaderapi::GetProcAddress;
 use wio::wide::ToWide;
 use zip::CompressionMethod;
 use zip::result::ZipError;
 use zip::write::FileOptions;
+use winapi::um::libloaderapi::{GetProcAddress, GetModuleHandleW};
 
 #[cfg(not(target_os = "windows"))]
 compile_error!("only for windows");
@@ -49,7 +48,7 @@ fn dll_attach() {
         println!("{} initializing...", PREFIX);
 
         let module_name = "java.dll";
-        let java_module = libloaderapi::GetModuleHandleW(module_name.to_wide_null().as_ptr());
+        let java_module = GetModuleHandleW(module_name.to_wide_null().as_ptr());
 
         if java_module.is_null() {
             println!("{} java.dll module not found! exiting..", PREFIX);
